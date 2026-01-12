@@ -1,0 +1,8 @@
+set KAGGLE_API_TOKEN=KGAT_your_real_token_here
+
+
+kaggle datasets list
+
+
+cd /d "D:\kaggle_upload"
+kaggle datasets create -p .
