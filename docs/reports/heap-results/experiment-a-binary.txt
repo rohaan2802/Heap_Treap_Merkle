@@ -1,0 +1,45 @@
+Experiment A - Binary Heap
+Dataset index: 0
+Dataset: /kaggle/input/road-d-datasets/Hongkong.road-d
+Vertices: 43620
+Edges: 91542
+Total runtime (ms): 16.0499
+Insert operations: 43620
+Extract-min operations: 43620
+Decrease-key operations: 675
+Heap height estimate: 0
+Number of trees: 0
+Cascading cuts: 0
+Memory usage estimate (MB): 3.05176e-05
+----------------------------------------
+
+Experiment A - Binary Heap
+Dataset index: 1
+Dataset: /kaggle/input/road-d-datasets/Chongqing.road-d
+Vertices: 1185464
+Edges: 2428866
+Total runtime (ms): 544.97
+Insert operations: 1185464
+Extract-min operations: 1185464
+Decrease-key operations: 10347
+Heap height estimate: 0
+Number of trees: 0
+Cascading cuts: 0
+Memory usage estimate (MB): 3.05176e-05
+----------------------------------------
+
+Experiment A - Binary Heap
+Dataset index: 2
+Dataset: /kaggle/input/road-d-datasets/Shanghai.road-d
+Vertices: 390171
+Edges: 855982
+Total runtime (ms): 208.07
+Insert operations: 390171
+Extract-min operations: 390171
+Decrease-key operations: 14915
+Heap height estimate: 0
+Number of trees: 0
+Cascading cuts: 0
+Memory usage estimate (MB): 3.05176e-05
+----------------------------------------
+

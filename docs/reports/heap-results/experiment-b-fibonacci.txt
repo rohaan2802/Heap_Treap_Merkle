@@ -1,0 +1,17 @@
+Experiment B - Fibonacci Heap (Operation Profiling)
+Total operations: 100000
+Insert operations: 33330
+Extract-min operations: 33325
+Decrease-key operations: 2208
+
+Average operation times (microseconds):
+Average insert time (us): 0.089126
+Average extract-min time (us): 0.389515
+Average decrease-key time (us): 0.0647405
+
+Heap structure after all operations:
+Heap height estimate: 4
+Number of trees: 2
+Cascading cuts: 27
+Memory usage estimate (MB): 0.000335693
+----------------------------------------

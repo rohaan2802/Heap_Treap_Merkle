@@ -1,0 +1,45 @@
+Experiment A - Hollow Heap
+Dataset index: 2
+Dataset: /kaggle/input/road-d-datasets/ShanghaiNew.road-D
+Vertices: 390171
+Edges: 667719
+Total runtime (ms): 0.02458
+Insert operations: 36
+Extract-min operations: 26
+Decrease-key operations: 0
+Heap height estimate: 0
+Number of trees: 1
+Cascading cuts: 0
+Memory usage estimate (MB): 0.00002
+----------------------------------------
+
+Experiment A - Hollow Heap
+Dataset index: 1
+Dataset: /kaggle/input/road-d-datasets/Chongqing.road-d
+Vertices: 1185464
+Edges: 2428866
+Total runtime (ms): 0.03370
+Insert operations: 65
+Extract-min operations: 54
+Decrease-key operations: 0
+Heap height estimate: 0
+Number of trees: 1
+Cascading cuts: 0
+Memory usage estimate (MB): 0.00002
+----------------------------------------
+
+Experiment A - Hollow Heap
+Dataset index: 0
+Dataset: /kaggle/input/road-d-datasets/Hongkong.road-d
+Vertices: 43620
+Edges: 91542
+Total runtime (ms): 0.01500
+Insert operations: 41
+Extract-min operations: 34
+Decrease-key operations: 0
+Heap height estimate: 0
+Number of trees: 1
+Cascading cuts: 0
+Memory usage estimate (MB): 0.00002
+----------------------------------------
+

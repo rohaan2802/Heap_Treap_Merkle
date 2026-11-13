@@ -1,0 +1,45 @@
+Experiment A - Fibonacci Heap
+Dataset index: 0
+Dataset: /kaggle/input/road-d-datasets/Hongkong.road-d
+Vertices: 43620
+Edges: 91542
+Total runtime (ms): 27.7463
+Insert operations: 43620
+Extract-min operations: 43620
+Decrease-key operations: 675
+Heap height estimate: 17
+Number of trees: 43620
+Cascading cuts: 0
+Memory usage estimate (MB): 2.66238
+----------------------------------------
+
+Experiment A - Fibonacci Heap
+Dataset index: 1
+Dataset: /kaggle/input/road-d-datasets/Chongqing.road-d
+Vertices: 1185464
+Edges: 2428866
+Total runtime (ms): 1003.57
+Insert operations: 1185464
+Extract-min operations: 1185464
+Decrease-key operations: 10347
+Heap height estimate: 22
+Number of trees: 1185464
+Cascading cuts: 0
+Memory usage estimate (MB): 72.355
+----------------------------------------
+
+Experiment A - Fibonacci Heap
+Dataset index: 2
+Dataset: /kaggle/input/road-d-datasets/Shanghai.road-d
+Vertices: 390171
+Edges: 855982
+Total runtime (ms): 361.554
+Insert operations: 390171
+Extract-min operations: 390171
+Decrease-key operations: 14915
+Heap height estimate: 20
+Number of trees: 390171
+Cascading cuts: 0
+Memory usage estimate (MB): 23.8142
+----------------------------------------
+

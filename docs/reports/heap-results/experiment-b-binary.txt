@@ -1,0 +1,12 @@
+Experiment B - Binary Heap (Operation Profiling)
+Total operations: 100000
+Insert count: 33607
+Extract-min count: 33100
+Decrease-key count: 25238
+Average insert time (us): 0.0564168
+Average extract-min time (us): 0.0887968
+Average decrease-key time (us): 0.0367858
+Heap height estimate: 9
+Number of trees: 1
+Cascading cuts: 0
+Memory usage estimate (MB): 0.0233154

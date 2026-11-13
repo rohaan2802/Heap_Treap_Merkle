@@ -1,0 +1,289 @@
+## Bonus Experiments – How to Run on Kaggle
+
+This guide explains **in what order** to run things in your Kaggle notebook and **which files to edit** for each heap.
+
+We have two bonus features:
+
+1. **Parallel Dijkstra (multi-source, multi-threaded)**
+2. **Heap evolution logging & visualization**
+
+---
+
+## 0. Before You Start
+
+Make sure these core files already exist in your Kaggle working directory:
+
+* `graph.h`
+* `priority_queue.h`
+* `dijkstra.h`
+* `binary_heap.h`
+* `fibonacci_heap.h`
+* `hollow_heap.h`
+* Road-D datasets in ``
+
+You will then create a few **new files** from notebook cells.
+
+---
+
+## 1. Parallel Dijkstra (Multi-Source, Multi-Threaded)
+
+### Files involved
+
+* `parallel_dijkstra.h`  *(new helper header)*
+* `experiment_parallel_binary.cpp`
+* (optional) `experiment_parallel_fibonacci.cpp`
+* (optional) `experiment_parallel_hollow.cpp`
+
+### Step-by-step (Binary Heap example)
+
+1. **Create `parallel_dijkstra.h`**
+
+   * New C++ cell with `%%writefile parallel_dijkstra.h`
+   * Paste the parallel helper template code.
+   * Run the cell.
+
+2. **Create `experiment_parallel_binary.cpp`**
+
+   * New C++ cell with `%%writefile experiment_parallel_binary.cpp`
+   * This file:
+
+     * Includes: `graph.h`, `dijkstra.h`, `binary_heap.h`, `parallel_dijkstra.h`
+     * Loads a dataset
+     * Picks several sources
+     * Calls `runDijkstraMultiSource<BinaryHeap>(...)`
+     * Writes `experiment_parallel_binary.txt`
+   * Run the cell.
+
+3. **Compile the binary version**
+
+   * Bash cell:
+
+     ```bash
+     !g++ -O2 experiment_parallel_binary.cpp -o expParallel_bin
+     ```
+
+4. **Run the binary parallel experiment**
+
+   * Bash cell (example: dataset index 1, 4 threads):
+
+     ```bash
+     !./expParallel_bin 1 4
+     ```
+   * View results:
+
+     ```bash
+     !cat experiment_parallel_binary.txt
+     ```
+
+---
+
+### How to adapt to other heaps
+
+**For Fibonacci Heap**
+
+1. Copy `experiment_parallel_binary.cpp` to a new file:
+
+   * `experiment_parallel_fibonacci.cpp`
+
+2. Inside that copy, change:
+
+   * `#include "binary_heap.h"` → `#include "fibonacci_heap.h"`
+   * `runDijkstraMultiSource<BinaryHeap>(...)` → `runDijkstraMultiSource<FibonacciHeap>(...)`
+   * Output filename: `"experiment_parallel_binary.txt"` → `"experiment_parallel_fibonacci.txt"`
+   * Executable name: `expParallel_bin` → e.g. `expParallel_fib`
+
+3. Compile & run:
+
+   ```bash
+   !g++ -O2 experiment_parallel_fibonacci.cpp -o expParallel_fib
+   !./expParallel_fib 1 4
+   !cat experiment_parallel_fibonacci.txt
+   ```
+
+**For Hollow Heap**
+
+Same pattern:
+
+* New file: `experiment_parallel_hollow.cpp`
+* Include `hollow_heap.h`
+* Use `HollowHeap` as template parameter
+* Output file: `experiment_parallel_hollow.txt`
+* Executable: `expParallel_hollow`
+
+Compile & run:
+
+```bash
+!g++ -O2 experiment_parallel_hollow.cpp -o expParallel_hollow
+!./expParallel_hollow 1 4
+!cat experiment_parallel_hollow.txt
+```
+
+---
+
+## 2. Heap Evolution Logging & Visualization
+
+### Files involved
+
+* `dijkstra_tracked.h`  *(new helper header)*
+* `experiment_evolution_fibonacci.cpp`
+* (optional) `experiment_evolution_binary.cpp`
+* (optional) `experiment_evolution_hollow.cpp`
+* `plot_heap_evolution.py` *(Python plotting script)*
+
+### Step-by-step (Fibonacci Heap example)
+
+1. **Create `dijkstra_tracked.h`**
+
+   * New C++ cell with `%%writefile dijkstra_tracked.h`
+   * Contains the `runDijkstraTracked<PQType>(...)` template with callback.
+   * Run the cell.
+
+2. **Create `experiment_evolution_fibonacci.cpp`**
+
+   * New C++ cell with `%%writefile experiment_evolution_fibonacci.cpp`
+   * This file:
+
+     * Includes: `graph.h`, `fibonacci_heap.h`, `dijkstra_tracked.h`
+     * Loads a dataset
+     * Runs `runDijkstraTracked<FibonacciHeap>(...)` from source 0
+     * The callback writes CSV rows with:
+
+       * step, heapSize, heapHeight, numTrees, cascadingCuts, inserts, extractMins, decreaseKeys
+     * Output file: `heap_evolution_fibonacci.csv`
+   * Run the cell.
+
+3. **Compile the Fibonacci evolution experiment**
+
+   ```bash
+   !g++ -O2 experiment_evolution_fibonacci.cpp -o expEvolution_fib
+   ```
+
+4. **Run Dijkstra with logging**
+
+   * Pick a dataset index (0=Hongkong, 1=Chongqing, 2=Shanghai):
+
+     ```bash
+     !./expEvolution_fib 0
+     ```
+   * Check CSV:
+
+     ```bash
+     !head heap_evolution_fibonacci.csv
+     ```
+
+5. **Create the Python plotting script**
+
+   * New Python cell with:
+
+     ```python
+     %%writefile plot_heap_evolution.py
+     import pandas as pd
+     import matplotlib.pyplot as plt
+
+     df = pd.read_csv("heap_evolution_fibonacci.csv")
+
+     # Heap height over time
+     plt.figure()
+     plt.plot(df["step"], df["heapHeight"])
+     plt.xlabel("Extract-min step")
+     plt.ylabel("Heap height estimate")
+     plt.title("Heap Height Evolution (Fibonacci Heap)")
+     plt.tight_layout()
+     plt.show()
+
+     # Number of trees over time
+     plt.figure()
+     plt.plot(df["step"], df["numTrees"])
+     plt.xlabel("Extract-min step")
+     plt.ylabel("Number of trees")
+     plt.title("Root List Size Evolution (Fibonacci Heap)")
+     plt.tight_layout()
+     plt.show()
+
+     # Cascading cuts over time
+     plt.figure()
+     plt.plot(df["step"], df["cascadingCuts"])
+     plt.xlabel("Extract-min step")
+     plt.ylabel("Total cascading cuts")
+     plt.title("Cascading Cuts Over Time (Fibonacci Heap)")
+     plt.tight_layout()
+     plt.show()
+     ```
+
+   * Run the cell to save `plot_heap_evolution.py`.
+
+6. **Run the plot script**
+
+   ```bash
+   !python plot_heap_evolution.py
+   ```
+
+   You’ll see three plots directly in the notebook.
+
+---
+
+### How to adapt evolution logging to other heaps
+
+**For Binary Heap**
+
+1. Copy `experiment_evolution_fibonacci.cpp` → `experiment_evolution_binary.cpp`.
+
+2. Change inside:
+
+   * `#include "fibonacci_heap.h"` → `#include "binary_heap.h"`
+   * All `FibonacciHeap` types → `BinaryHeap`
+   * CSV name: `"heap_evolution_fibonacci.csv"` → `"heap_evolution_binary.csv"`
+   * You can keep the same columns; `cascadingCuts` will just be 0.
+
+3. Compile & run:
+
+   ```bash
+   !g++ -O2 experiment_evolution_binary.cpp -o expEvolution_bin
+   !./expEvolution_bin 0
+   ```
+
+4. Copy `plot_heap_evolution.py` or reuse it:
+
+   * Change `csv` file name inside to `"heap_evolution_binary.csv"`
+   * Change figure titles from “Fibonacci” to “Binary”
+
+**For Hollow Heap**
+
+Same idea:
+
+1. New file: `experiment_evolution_hollow.cpp`
+
+   * Include `hollow_heap.h`
+   * Type = `HollowHeap`
+   * CSV: `heap_evolution_hollow.csv`
+
+2. Compile & run:
+
+   ```bash
+   !g++ -O2 experiment_evolution_hollow.cpp -o expEvolution_hollow
+   !./expEvolution_hollow 0
+   ```
+
+3. In `plot_heap_evolution.py`, change:
+
+   * CSV name → `"heap_evolution_hollow.csv"`
+   * Titles → “Hollow Heap”
+
+---
+
+## 3. Suggested Order of Running in One Kaggle Notebook
+
+1. **Core headers already exist** (`graph.h`, heaps, `dijkstra.h`).
+2. Create and run:
+
+   * `parallel_dijkstra.h`
+   * `experiment_parallel_binary.cpp`
+3. Compile & run parallel binary experiment.
+4. (Optional) Add and run parallel Fibonacci & Hollow experiments.
+5. Create and run:
+
+   * `dijkstra_tracked.h`
+   * `experiment_evolution_fibonacci.cpp`
+6. Compile & run Fibonacci evolution experiment.
+7. Create and run `plot_heap_evolution.py` to visualize.
+8. (Optional) Repeat evolution steps for Binary and Hollow heaps.

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three algorithm studies with runnable demos: Dijkstra and heaps, treap vs. BST, and SHA-256 review integrity.">
+  <meta name="theme-color" content="#24559a">
+  <meta property="og:title" content="Heap, Treap &amp; Merkle">
+  <meta property="og:description" content="Shortest paths, ordered feeds, and review integrity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rohaan2802.github.io/Heap_Treap_Merkle/">
+  <meta property="og:image" content="https://rohaan2802.github.io/Heap_Treap_Merkle/assets/screenshots/01-heap-shortest-paths.png">
+  <title>Heap, Treap &amp; Merkle | Algorithms Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <nav class="container nav-inner" aria-label="Main navigation">
+    <a class="brand" href="#top"><span class="brand-logo" aria-hidden="true">HT</span> Algorithms Portfolio</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#links">Live Links</a></li><li><a href="#overview">Overview</a></li><li><a href="#inside">Contents</a></li><li><a href="#heap">Heap</a></li><li><a href="#treap">Treap</a></li><li><a href="#merkle">Merkle</a></li><li><a href="#screenshots">Screenshots</a></li><li><a href="#how-to-compile-and-run">Run</a></li>
+    </ul>
+    <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false">☾</button>
+  </nav>
+</header>
+<main id="main">
+  <div class="hero"><div class="container">
+    <span class="eyebrow">Algorithms coursework</span>
+    <h1>Heap, Treap &amp; Merkle</h1>
+    <p class="lead">Three experiments in choosing the right structure for the job: find the shortest path, keep a feed ordered, and verify a record against a trusted hash.</p>
+    <div class="badges project-badges" aria-label="Project technologies and resources">
+<a href="heap/README.md"><img src="assets/badges/cpp.svg" alt="C++: C++17" height="30"></a>
+<a href="treap/trees.py"><img src="assets/badges/python.svg" alt="Python: Feed and proofs" height="30"></a>
+<a href="CMakeLists.txt"><img src="assets/badges/cmake.svg" alt="Build: CMake" height="30"></a>
+<a href="merkle/merkle.py"><img src="assets/badges/sha256.svg" alt="Integrity: SHA-256" height="30"></a>
+<a href="#screenshots"><img src="assets/badges/gallery.svg" alt="Gallery: 24 screenshots" height="30"></a>
+<a href="https://github.com/rohaan2802/Heap_Treap_Merkle/releases"><img src="assets/badges/release.svg" alt="Data: GitHub Releases" height="30"></a>
+</div>
+    <div class="cta"><a class="btn btn-primary" href="https://github.com/rohaan2802/Heap_Treap_Merkle">Browse on GitHub</a><a class="btn btn-ghost" href="#screenshots">See the demos</a></div>
+    <div class="stats"><div class="stat"><b>3</b><span>Priority queues</span></div><div class="stat"><b>2</b><span>Feed structures</span></div><div class="stat"><b>24</b><span>Screenshots</span></div></div>
+  </div></div>
+  <section id="links"><div class="container">
+    <h2>Live Links</h2>
+    <div class="grid"><a class="card link-card" href="https://github.com/rohaan2802/Heap_Treap_Merkle"><span><strong>Repository</strong><small>https://github.com/rohaan2802/Heap_Treap_Merkle</small></span></a><a class="card link-card" href="index.html"><span><strong>Website (GitHub Pages)</strong><small>https://rohaan2802.github.io/Heap_Treap_Merkle/</small></span></a><a class="card link-card" href="https://github.com/rohaan2802/Heap_Treap_Merkle/releases"><span><strong>Releases</strong><small>https://github.com/rohaan2802/Heap_Treap_Merkle/releases</small></span></a></div>
+  </div></section>
+  <section id="overview"><div class="container">
+    <h2>Overview</h2>
+    <p class="sub">The project studies how data structures affect three different jobs: finding routes, ranking posts, and checking records.</p><div class="grid"><article class="card"><h3>Shortest paths</h3><p>The C++ benchmark runs Dijkstra with three min-priority queues and compares all resulting distances.</p></article><article class="card"><h3>Ordered feeds</h3><p>Two Python trees support the same feed operations. The benchmark shows what changes when a tree also orders nodes by score.</p></article><article class="card"><h3>Review integrity</h3><p>A SHA-256 Merkle tree commits to a sequence of reviews and supports proofs for individual records.</p></article></div>
+  </div></section>
+  <section id="inside"><div class="container">
+<h2>What&#x27;s Inside</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="What&#x27;s Inside"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Contents</th><th scope="col">Start here</th></tr></thead>
+<tbody>
+<tr><th scope="row">Heap study</th><td>Graph loader, Dijkstra, three priority queues, and benchmark drivers</td><td><a href="heap/README.md" aria-label="Open Heap study">Open</a></td></tr>
+<tr><th scope="row">Feed study</th><td>BST and treap implementations, experiment helpers, CLI, and notebook</td><td><a href="treap/reddit-feed-study.ipynb" aria-label="Open Feed study">Open</a></td></tr>
+<tr><th scope="row">Review integrity</th><td>JSON Lines loader, SHA-256 tree, inclusion proofs, and CLI</td><td><a href="merkle/merkle.py" aria-label="Open Review integrity">Open</a></td></tr>
+<tr><th scope="row">Data</th><td>Small runnable fixtures and the full road archive inventory</td><td><a href="data/README.md" aria-label="Open Data">Open</a></td></tr>
+<tr><th scope="row">Reports</th><td>Original experimental methods and results</td><td><a href="docs/reports/heap-report.pdf" aria-label="Open Reports">Open</a></td></tr>
+<tr><th scope="row">Coursework</th><td>Problem statements, rubrics, and four Assignment 03 solutions</td><td><a href="docs/coursework/assignment-03/README.md" aria-label="Open Coursework">Open</a></td></tr></tbody>
+</table></div>
+</div></section>
+<section id="heap"><div class="container">
+    <h2>Heap and Shortest Paths</h2>
+    <p class="sub">Dijkstra reads an undirected weighted edge list. It requires nonnegative weights and uses a priority queue keyed by tentative distance.</p><div class="grid"><article class="card"><h3>Binary heap</h3><p>An array stores nodes and their positions. Sift operations restore heap order after insertion, extraction, or a decrease.</p></article><article class="card"><h3>Fibonacci heap</h3><p>A forest defers consolidation until extract-min. Cuts and cascading cuts restore order after a decrease.</p></article><article class="card"><h3>Hollow heap</h3><p>Stable item handles follow items to fresh nodes. The queue discards hollow roots during extraction and consolidates the surviving roots.</p></article><article class="card"><h3>Experiments A and B</h3><p>Experiment A runs Dijkstra on road networks. Experiment B exercises priority queues with synthetic operations. The consolidated benchmark reports insertions, extractions, decreases, and elapsed time.</p></article><article class="card"><h3>Parallel and tracked runs</h3><p>The bonus code runs independent sources over one graph and records changes in the Fibonacci heap over the course of Dijkstra.</p></article></div><p class="section-links"><a href="heap/benchmark.cpp">Benchmark source</a> · <a href="heap/README.md">Heap experiment guide</a> · <a href="docs/reports/heap-report.pdf">Original heap report</a></p>
+  </div></section>
+  <section id="heap-details"><div class="container">
+    <h2>Heap Inputs, Outputs, and Experiments</h2>
+    <div class="grid">
+      <article class="card"><h3>Graph format</h3><p>Use one from–to–weight triple per line. Vertex IDs start at zero, and the highest ID determines the number of vertices. Lines beginning with # are comments. The loader treats each edge as undirected and rejects negative weights.</p></article>
+      <article class="card"><h3>Tracing the sample</h3><p>From vertex 0, the route to vertex 1 improves from the direct cost of 8 to a cost of 3 via vertex 2. The final distances to vertices 0 through 4 are 0, 3, 2, 5, and 8. Vertices 5 and 6 are unreachable from 0.</p></article>
+      <article class="card"><h3>Reading the benchmark</h3><p>Inserts count the first discovery of each vertex. Decreases count improvements to a vertex already queued. Extracts count removals of the current minimum. The benchmark compares distances, since equal-cost routes can have different predecessors.</p></article>
+      <article class="card"><h3>Optional coursework runs</h3><p>Experiment A applies Dijkstra to a road graph. Experiment B profiles synthetic insert, extract-min, and decrease-key operations. The parallel run assigns independent source vertices to workers over a shared graph. The evolution run exports CSV counters for the Fibonacci heap plotting script.</p></article>
+      <article class="card"><h3>Road data and filenames</h3><p>The release package contains Hongkong.road-d, Chongqing.road-d, Shanghai.road-d, and ShanghaiNew.road-D. Use the exact filename on systems that distinguish uppercase and lowercase letters.</p></article>
+    </div>
+    <p class="section-links"><a href="heap/README.md">Heap experiment guide</a> · <a href="heap/include/graph.h">Graph loader</a> · <a href="heap/include/dijkstra.h">Dijkstra source</a></p>
+  </div></section>
+  <section id="heap-files"><div class="container">
+<h2>Heap File and Experiment Guide</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Heap File and Experiment Guide"><table>
+<thead><tr><th scope="col">File or target</th><th scope="col">Role</th><th scope="col">Open</th></tr></thead>
+<tbody>
+<tr><th scope="row">benchmark.cpp</th><td>Runs all three queues on the same graph and compares their distance arrays</td><td><a href="heap/benchmark.cpp" aria-label="Open benchmark.cpp">Open</a></td></tr>
+<tr><th scope="row">priority_queue.h</th><td>Shared operations and node handle interface</td><td><a href="heap/include/priority_queue.h" aria-label="Open priority_queue.h">Open</a></td></tr>
+<tr><th scope="row">graph.h / dijkstra.h</th><td>Loads the road edge list and computes distances and predecessors</td><td><a href="heap/include/dijkstra.h" aria-label="Open graph.h / dijkstra.h">Open</a></td></tr>
+<tr><th scope="row">binary_heap.h</th><td>Array-backed queue with index tracking and sift operations</td><td><a href="heap/include/binary_heap.h" aria-label="Open binary_heap.h">Open</a></td></tr>
+<tr><th scope="row">fibonacci_heap.h</th><td>Root consolidation, decrease-key cuts, and cascading cuts</td><td><a href="heap/include/fibonacci_heap.h" aria-label="Open fibonacci_heap.h">Open</a></td></tr>
+<tr><th scope="row">hollow_heap.h</th><td>Stable item handles and cleanup of hollow roots during extract-min</td><td><a href="heap/include/hollow_heap.h" aria-label="Open hollow_heap.h">Open</a></td></tr>
+<tr><th scope="row">Experiment A</th><td>Separate routing drivers for Binary, Fibonacci, and Hollow heaps</td><td><a href="heap/experiments/experiment_a_binary.cpp" aria-label="Open Experiment A">Open</a></td></tr>
+<tr><th scope="row">Experiment B</th><td>Separate operation profiling drivers for the same three queues</td><td><a href="heap/experiments/experiment_b_binary.cpp" aria-label="Open Experiment B">Open</a></td></tr>
+<tr><th scope="row">Parallel benchmark</th><td>Runs independent shortest-path searches over one read-only graph</td><td><a href="heap/bonus/parallel_benchmark.cpp" aria-label="Open Parallel benchmark">Open</a></td></tr>
+<tr><th scope="row">Heap evolution</th><td>Records heap size, estimated height, tree count, and cuts to CSV</td><td><a href="heap/bonus/heap_evolution.cpp" aria-label="Open Heap evolution">Open</a></td></tr>
+<tr><th scope="row">Evolution plots</th><td>Plots the recorded height, tree count, and cascading cuts</td><td><a href="heap/bonus/plot_evolution.py" aria-label="Open Evolution plots">Open</a></td></tr></tbody>
+</table></div>
+</div></section>
+<section id="treap"><div class="container">
+    <h2>Treap and BST Feed Study</h2>
+    <p class="sub">Both trees order posts by timestamp and post ID. The treap also keeps higher scores above lower scores, so its root holds a most-popular post.</p><div class="grid"><article class="card"><h3>Feed operations</h3><p>Both implementations support adding and replacing posts, likes, deletion, popularity lookup, and recent posts. An ID map helps find a post for updates.</p></article><article class="card"><h3>Ordered workload</h3><p>Chronological insertion can make a plain BST a chain. A treap rotates when a child outranks its parent. The resulting height depends on how scores relate to timestamps.</p></article><article class="card"><h3>Benchmark metrics</h3><p>The study measures height, rotations, average insertion and deletion time, and the time to query the most popular post. The notebook also shows tree shapes and feed operations.</p></article><article class="card"><h3>Input data</h3><p>The command-line demo and notebook run on synthetic data. A compatible Reddit submission dump can be streamed from compressed JSON Lines for a separate run.</p></article></div><p class="section-links"><a href="treap/trees.py">Feed implementations</a> · <a href="treap/experiments.py">Benchmark implementation</a> · <a href="treap/reddit-feed-study.ipynb">Reddit study notebook</a> · <a href="docs/reports/treap-vs-bst-report.pdf">Original treap report</a></p>
+  </div></section>
+  <section id="feed-details"><div class="container">
+    <h2>Feed Operations and Benchmark Method</h2>
+    <div class="grid">
+      <article class="card"><h3>Post identity and ordering</h3><p>Each post has an ID, timestamp, and score. Both trees use the timestamp and ID together as the ordering key. Adding an existing ID replaces the previous entry.</p></article>
+      <article class="card"><h3>Likes and deletion</h3><p>The ID map locates the entry to update or remove. The BST can increment a score in place. The treap reinserts the liked post at the new priority so the score ordering stays valid.</p></article>
+      <article class="card"><h3>Popularity and recency</h3><p>The BST scans for the highest score. The treap returns its root. Both trees find recent posts by visiting nodes in reverse timestamp and ID order.</p></article>
+      <article class="card"><h3>What is timed</h3><p>The benchmark measures adding posts, looking up the most popular post, and deleting posts. It reports average operation times and measures tree height before deletion. The notebook adds tree shapes, rotations, likes, and recent-post examples.</p></article>
+      <article class="card"><h3>Reproducing the workload</h3><p>The default CLI generates 1,000 chronological posts from a fixed score sequence. Use --posts to change the size or --dataset to supply a compatible compressed Reddit dump. The synthetic results depend on how timestamps and scores are distributed.</p></article>
+    </div>
+    <p class="section-links"><a href="treap/trees.py">Feed source</a> · <a href="treap/experiments.py">Benchmark source</a> · <a href="treap/reddit-feed-study.ipynb">Study notebook</a></p>
+  </div></section>
+  <section id="feed-files"><div class="container">
+<h2>Feed File and Operation Guide</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Feed File and Operation Guide"><table>
+<thead><tr><th scope="col">File or operation</th><th scope="col">Role</th><th scope="col">Open</th></tr></thead>
+<tbody>
+<tr><th scope="row">trees.py</th><td>Contains BSTFeed, TreapFeed, rotations, traversal, and validators</td><td><a href="treap/trees.py" aria-label="Open trees.py">Open</a></td></tr>
+<tr><th scope="row">experiments.py</th><td>Runs common workloads and records height, rotations, and operation timings</td><td><a href="treap/experiments.py" aria-label="Open experiments.py">Open</a></td></tr>
+<tr><th scope="row">dataset_utils.py</th><td>Streams compressed Reddit submissions as ID, timestamp, and score tuples</td><td><a href="treap/dataset_utils.py" aria-label="Open dataset_utils.py">Open</a></td></tr>
+<tr><th scope="row">python -m treap</th><td>Runs the synthetic benchmark or reads the optional Reddit input</td><td><a href="treap/__main__.py" aria-label="Open python -m treap">Open</a></td></tr>
+<tr><th scope="row">Notebook</th><td>Runs the study and visualizes height, timings, rotations, and tree shape</td><td><a href="treap/reddit-feed-study.ipynb" aria-label="Open Notebook">Open</a></td></tr>
+<tr><th scope="row">addPost / deletePost</th><td>Insert or remove by ID. Reusing an ID replaces its previous entry</td><td><a href="treap/trees.py" aria-label="Open addPost / deletePost">Open</a></td></tr>
+<tr><th scope="row">likePost</th><td>Updates the score. The treap restores the heap order by reinserting the post</td><td><a href="treap/trees.py" aria-label="Open likePost">Open</a></td></tr>
+<tr><th scope="row">getMostPopular / getMostRecent</th><td>Queries the highest score or returns posts in reverse chronological key order</td><td><a href="treap/trees.py" aria-label="Open getMostPopular / getMostRecent">Open</a></td></tr></tbody>
+</table></div>
+</div></section>
+<section id="merkle"><div class="container">
+    <h2>Merkle Tree and Review Integrity</h2>
+    <p class="sub">The loader reads JSON Lines and selects review ID, product ID, rating, and review text. The tree commits to those fields in input order.</p><div class="grid"><article class="card"><h3>Tree construction</h3><p>Each record becomes a leaf digest. Parent hashes combine child digests, and an unpaired child is repeated for that level. The final root also commits to the leaf count.</p></article><article class="card"><h3>Inclusion proofs</h3><p>The proof carries the sibling hash and side at each level. Verification recomputes the root from the candidate leaf and proof, then compares it with a trusted digest.</p></article><article class="card"><h3>Tamper detection</h3><p>The sample verifies an original review and rejects a changed leaf. The interactive menu can also save a trusted root for the session and demonstrate an edit after reloading a changed copy.</p></article><article class="card"><h3>Scope of the check</h3><p>Verification covers the chosen fields, ordering and record count. It depends on getting the expected root from a trusted source.</p></article></div><p class="section-links"><a href="merkle/merkle.py">Tree and interactive CLI</a> · <a href="data/sample-reviews.jsonl">Sample reviews</a> · <a href="docs/reports/merkle-tree-report.pdf">Original Merkle report</a></p>
+  </div></section>
+  <section id="proof-details"><div class="container">
+    <h2>Review Fields, Proofs, and Tampering</h2>
+    <div class="grid">
+      <article class="card"><h3>JSON Lines input</h3><p>Each line contains one review object. The loader reads review_id or reviewerID, asin, overall, and reviewText. When the ID is absent it creates one from the record position.</p></article>
+      <article class="card"><h3>Hash construction</h3><p>A leaf hashes the four selected fields as an ordered JSON array. Leaf, parent, and root hashes use separate prefixes. The tree repeats the final child at odd levels, and the root commits to the number of leaves.</p></article>
+      <article class="card"><h3>Proof contents</h3><p>Each proof step supplies a sibling digest and its side. The verifier uses that side to combine hashes in the correct order, then checks the resulting digest against the trusted root and record count.</p></article>
+      <article class="card"><h3>Interactive workflow</h3><p>Load and preview the reviews, build the tree, and save the root for the session. Then verify the current tree, request a proof by review ID, or run the edit simulation. The simulation writes a separate changed copy and rebuilds the tree after reading it back.</p></article>
+      <article class="card"><h3>Scope and scaling</h3><p>Changing a covered field, the input order, or the record count changes the commitment. Fields outside the selected four are outside the check. The scaling menu measures tree construction on available record prefixes.</p></article>
+    </div>
+    <p class="section-links"><a href="merkle/merkle.py">Merkle implementation</a> · <a href="data/sample-reviews.jsonl">Example reviews</a> · <a href="docs/reports/merkle-tree-report.pdf">Original report</a></p>
+  </div></section>
+  <section id="merkle-files"><div class="container">
+<h2>Merkle File and Menu Guide</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Merkle File and Menu Guide"><table>
+<thead><tr><th scope="col">File or menu step</th><th scope="col">Role</th><th scope="col">Open</th></tr></thead>
+<tbody>
+<tr><th scope="row">ReviewDataset</th><td>Reads selected review fields and indexes reviews by ID</td><td><a href="merkle/merkle.py" aria-label="Open ReviewDataset">Open</a></td></tr>
+<tr><th scope="row">MerkleTree</th><td>Builds SHA-256 levels, produces a sibling path, and verifies an inclusion proof</td><td><a href="merkle/merkle.py" aria-label="Open MerkleTree">Open</a></td></tr>
+<tr><th scope="row">python -m merkle FILE</th><td>Runs the proof and tampering demonstration on a chosen JSON Lines file</td><td><a href="merkle/__main__.py" aria-label="Open python -m merkle FILE">Open</a></td></tr>
+<tr><th scope="row">Menu 1–3</th><td>Load a file, preview records, and build the tree</td><td><a href="merkle/merkle.py" aria-label="Open Menu 1–3">Open</a></td></tr>
+<tr><th scope="row">Menu 4–6</th><td>Save the root for the session, compare roots, or verify a selected review</td><td><a href="merkle/merkle.py" aria-label="Open Menu 4–6">Open</a></td></tr>
+<tr><th scope="row">Menu 7–9</th><td>Simulate an edit, benchmark available prefixes, or exit</td><td><a href="merkle/merkle.py" aria-label="Open Menu 7–9">Open</a></td></tr>
+<tr><th scope="row">Sample reviews</th><td>Three records for verifying an odd-sized tree and testing a changed leaf</td><td><a href="data/sample-reviews.jsonl" aria-label="Open Sample reviews">Open</a></td></tr></tbody>
+</table></div>
+</div></section>
+<section id="coursework"><div class="container">
+    <h2>Reports and Coursework</h2>
+    <p class="sub">The reports preserve the original experimental setups and measurements. Use the current demos to reproduce the behavior in this repository.</p><div class="grid"><article class="card"><h3>Assignment 03</h3><p>The original statement and four standalone C++ solutions are organized by question.</p></article><article class="card"><h3>Project briefs and rubrics</h3><p>The heap and treap briefs, all three rubrics, and the evaluation summary document the coursework requirements.</p></article></div><p class="section-links"><a href="docs/coursework/assignment-03/README.md">Assignment 03</a> · <a href="docs/coursework/project-algorithm-heaps.pdf">Heap brief</a> · <a href="docs/coursework/project-algorithm-treaps.pdf">Treap brief</a> · <a href="docs/coursework/rubric-heap-part.pdf">Heap rubric</a> · <a href="docs/coursework/rubric-treap-part.pdf">Treap rubric</a> · <a href="docs/coursework/rubric-merkle-trees-part.pdf">Merkle rubric</a> · <a href="docs/coursework/rubric-evaluation-summary.pdf">Evaluation summary</a></p>
+  </div></section>
+  <section id="materials"><div class="container">
+<h2>Coursework and Report Index</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Coursework and Report Index"><table>
+<thead><tr><th scope="col">Resource</th><th scope="col">Contents</th><th scope="col">Open</th></tr></thead>
+<tbody>
+<tr><th scope="row">Heap brief and rubric</th><td>Routing and priority-queue requirements</td><td><a href="docs/coursework/project-algorithm-heaps.pdf" aria-label="Open Heap brief and rubric">Open</a></td></tr>
+<tr><th scope="row">Treap brief and rubric</th><td>Feed operations and comparison requirements</td><td><a href="docs/coursework/project-algorithm-treaps.pdf" aria-label="Open Treap brief and rubric">Open</a></td></tr>
+<tr><th scope="row">Merkle rubric</th><td>Tree construction, proofs, performance, and tamper detection</td><td><a href="docs/coursework/rubric-merkle-trees-part.pdf" aria-label="Open Merkle rubric">Open</a></td></tr>
+<tr><th scope="row">Evaluation summary</th><td>Combined coursework evaluation</td><td><a href="docs/coursework/rubric-evaluation-summary.pdf" aria-label="Open Evaluation summary">Open</a></td></tr>
+<tr><th scope="row">Heap report</th><td>Implementation design, original measurements, and analysis</td><td><a href="docs/reports/heap-report.pdf" aria-label="Open Heap report">Open</a></td></tr>
+<tr><th scope="row">Feed report</th><td>Dataset, workload, results, and original figures</td><td><a href="docs/reports/treap-vs-bst-report.pdf" aria-label="Open Feed report">Open</a></td></tr>
+<tr><th scope="row">Merkle report</th><td>Original SHA-256 integrity workflow and scaling measurements</td><td><a href="docs/reports/merkle-tree-report.pdf" aria-label="Open Merkle report">Open</a></td></tr>
+<tr><th scope="row">Assignment 03</th><td>Statement and standalone C++ solutions organized by question</td><td><a href="docs/coursework/assignment-03/README.md" aria-label="Open Assignment 03">Open</a></td></tr></tbody>
+</table></div>
+</div></section>
+<section id="original-submissions"><div class="container">
+    <h2>Original Submissions</h2>
+    <p>Browse the original notebook revisions, the Section D report, and the heap benchmark logs.</p>
+    <p class="section-links"><a href="docs/original-submissions/README.md">Submission index</a> · <a href="docs/reports/heap-results/README.md">Heap measurements</a> · <a href="merkle/test_merkle.py">Merkle test suite</a></p>
+  </div></section>
+  <section id="release"><div class="container">
+    <h2>Data and Release Downloads</h2>
+    <p class="sub">The bundled graph and reviews let you run the demos immediately. Full road-network inputs belong in the separate release ZIP.</p><div class="grid"><article class="card"><h3>Sample graph</h3><p>Each row lists two vertex IDs and an edge weight. Two vertices are disconnected from the default source, so the demo also shows unreachable distances.</p></article><article class="card"><h3>Road networks</h3><p><code>road-network-datasets.zip</code> contains Hongkong, Chongqing, Shanghai, and ShanghaiNew. Extract the files into data/ and pass the desired path to the benchmark.</p></article><article class="card"><h3>Reddit inputs</h3><p>Use a compatible .zst submission archive with id, created_utc, and score. Install the notebook dependencies before using the compressed data.</p></article></div><p class="section-links"><a href="data/README.md">Data guide</a> · <a href="data/sample.road-d">Sample road graph</a> · <a href="treap/requirements.txt">Notebook dependencies</a> · <a href="https://github.com/rohaan2802/Heap_Treap_Merkle/releases">GitHub Releases</a></p>
+  </div></section>
+  <section id="results"><div class="container">
+    <h2>Results and Trade-offs</h2>
+    <div class="grid">
+      <article class="card"><h3>Shortest-path agreement</h3><p>The three queues agree on distances for both the sample graph and the 43,620-vertex Hong Kong graph. Compare timings on the same input and build before drawing performance conclusions.</p></article>
+      <article class="card"><h3>Feed height at 1,000 posts</h3><p>The BST reaches height 999 and the treap reaches height 22 on the synthetic run. The treap's height depends on the relationship between scores and insertion order.</p></article>
+      <article class="card"><h3>Proof size and integrity</h3><p>Building the tree takes linear time in the number of records. A single inclusion proof needs logarithmically many sibling hashes. A changed review fails against the original trusted root.</p></article>
+    </div>
+  </div></section>
+  <section id="screenshots"><div class="container">
+    <h2>Screenshots</h2>
+    <p class="sub">Filter 24 captures by topic or search by title. Select a screenshot to enlarge it.</p><div id="gallery-controls" class="gallery-controls" hidden><label class="search"><span class="sr-only">Search screenshots</span><input id="gallery-search" type="search" placeholder="Search screenshots"></label><div class="gallery-filters" role="group" aria-label="Screenshot categories"><button class="chip" type="button" data-filter="all" aria-pressed="true">All</button><button class="chip" type="button" data-filter="heap" aria-pressed="false">Heap</button><button class="chip" type="button" data-filter="treap" aria-pressed="false">Treap</button><button class="chip" type="button" data-filter="merkle" aria-pressed="false">Merkle</button><button class="chip" type="button" data-filter="coursework" aria-pressed="false">Coursework</button></div><p id="gallery-count" role="status"></p></div>
+<div class="site-gallery">
+<figure class="card" data-category="heap"><a href="assets/screenshots/01-heap-shortest-paths.png" data-title="Dijkstra on the sample road graph"><img src="assets/screenshots/01-heap-shortest-paths.png" width="1440" height="900" loading="lazy" decoding="async" alt="Dijkstra on the sample road graph"></a><figcaption><strong>Dijkstra on the sample road graph</strong><p>All three queues agree on the distances from vertex 0. Vertices 5 and 6 are unreachable.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/02-binary-heap.png" data-title="Binary heap insertion"><img src="assets/screenshots/02-binary-heap.png" width="1440" height="900" loading="lazy" decoding="async" alt="Binary heap insertion"></a><figcaption><strong>Binary heap insertion</strong><p>Insertion appends a node to the array, then restores heap order by sifting up.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/03-fibonacci-heap.png" data-title="Fibonacci heap extraction"><img src="assets/screenshots/03-fibonacci-heap.png" width="1440" height="900" loading="lazy" decoding="async" alt="Fibonacci heap extraction"></a><figcaption><strong>Fibonacci heap extraction</strong><p>Extract-min promotes children of the minimum and prepares the roots for consolidation.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/04-hollow-heap.png" data-title="Hollow heap decrease-key"><img src="assets/screenshots/04-hollow-heap.png" width="1440" height="900" loading="lazy" decoding="async" alt="Hollow heap decrease-key"></a><figcaption><strong>Hollow heap decrease-key</strong><p>A stable item handle moves to a new node while the old node becomes hollow.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/05-dijkstra-relaxation.png" data-title="Edge relaxation"><img src="assets/screenshots/05-dijkstra-relaxation.png" width="1440" height="900" loading="lazy" decoding="async" alt="Edge relaxation"></a><figcaption><strong>Edge relaxation</strong><p>Dijkstra inserts newly discovered vertices and decreases the key when it finds a better route.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/06-hongkong-road-network.png" data-title="Hong Kong road network"><img src="assets/screenshots/06-hongkong-road-network.png" width="1440" height="900" loading="lazy" decoding="async" alt="Hong Kong road network"></a><figcaption><strong>Hong Kong road network</strong><p>The full Hong Kong graph exercises all three queues. The distances agree across 43,620 vertices.</p></figcaption></figure>
+<figure class="card" data-category="heap"><a href="assets/screenshots/07-parallel-dijkstra.png" data-title="Parallel Dijkstra benchmark"><img src="assets/screenshots/07-parallel-dijkstra.png" width="1440" height="900" loading="lazy" decoding="async" alt="Parallel Dijkstra benchmark"></a><figcaption><strong>Parallel Dijkstra benchmark</strong><p>Independent source runs share the graph. The report compares one worker with four workers.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/08-treap-feed-benchmark.png" data-title="Treap vs. BST benchmark"><img src="assets/screenshots/08-treap-feed-benchmark.png" width="1440" height="900" loading="lazy" decoding="async" alt="Treap vs. BST benchmark"></a><figcaption><strong>Treap vs. BST benchmark</strong><p>The synthetic chronological workload shows how a plain BST can become a chain. Timings are from one local run.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/09-tree-height.png" data-title="Tree height by feed size"><img src="assets/screenshots/09-tree-height.png" width="1440" height="900" loading="lazy" decoding="async" alt="Tree height by feed size"></a><figcaption><strong>Tree height by feed size</strong><p>The original study plots BST and treap height as the number of posts grows.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/10-height-ratio.png" data-title="Height relative to log₂(n)"><img src="assets/screenshots/10-height-ratio.png" width="1440" height="900" loading="lazy" decoding="async" alt="Height relative to log₂(n)"></a><figcaption><strong>Height relative to log₂(n)</strong><p>The original study compares height divided by log₂(n) across sample sizes.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/11-insertion-time.png" data-title="Insertion time by feed size"><img src="assets/screenshots/11-insertion-time.png" width="1440" height="900" loading="lazy" decoding="async" alt="Insertion time by feed size"></a><figcaption><strong>Insertion time by feed size</strong><p>The original study measures average insertion time as the feed grows.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/12-popularity-lookup.png" data-title="Most popular post lookup"><img src="assets/screenshots/12-popularity-lookup.png" width="1440" height="900" loading="lazy" decoding="async" alt="Most popular post lookup"></a><figcaption><strong>Most popular post lookup</strong><p>The original study compares a BST scan with access to the treap root.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/13-deletion-time.png" data-title="Deletion time by feed size"><img src="assets/screenshots/13-deletion-time.png" width="1440" height="900" loading="lazy" decoding="async" alt="Deletion time by feed size"></a><figcaption><strong>Deletion time by feed size</strong><p>The original study measures the average time to remove a post.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/14-treap-rotations.png" data-title="Rotations during treap insertion"><img src="assets/screenshots/14-treap-rotations.png" width="1440" height="900" loading="lazy" decoding="async" alt="Rotations during treap insertion"></a><figcaption><strong>Rotations during treap insertion</strong><p>The original study counts rotations as more posts are inserted.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/15-bst-shape.png" data-title="Shape of the binary search tree"><img src="assets/screenshots/15-bst-shape.png" width="1440" height="900" loading="lazy" decoding="async" alt="Shape of the binary search tree"></a><figcaption><strong>Shape of the binary search tree</strong><p>The example’s timestamp order produces a right-leaning BST.</p></figcaption></figure>
+<figure class="card" data-category="treap"><a href="assets/screenshots/16-treap-shape.png" data-title="Shape of the score-prioritized treap"><img src="assets/screenshots/16-treap-shape.png" width="1440" height="900" loading="lazy" decoding="async" alt="Shape of the score-prioritized treap"></a><figcaption><strong>Shape of the score-prioritized treap</strong><p>The same example posts form a different shape when score determines priority.</p></figcaption></figure>
+<figure class="card" data-category="merkle"><a href="assets/screenshots/17-merkle-inclusion-proof.png" data-title="Verify a review against the root"><img src="assets/screenshots/17-merkle-inclusion-proof.png" width="1440" height="900" loading="lazy" decoding="async" alt="Verify a review against the root"></a><figcaption><strong>Verify a review against the root</strong><p>The original review proof passes. A changed leaf fails against the same trusted root.</p></figcaption></figure>
+<figure class="card" data-category="merkle"><a href="assets/screenshots/18-merkle-tree-build.png" data-title="Build the Merkle tree"><img src="assets/screenshots/18-merkle-tree-build.png" width="1440" height="900" loading="lazy" decoding="async" alt="Build the Merkle tree"></a><figcaption><strong>Build the Merkle tree</strong><p>The build hashes the selected review fields, then combines pairs of child digests from the bottom up.</p></figcaption></figure>
+<figure class="card" data-category="merkle"><a href="assets/screenshots/19-merkle-proof-path.png" data-title="Follow the proof path"><img src="assets/screenshots/19-merkle-proof-path.png" width="1440" height="900" loading="lazy" decoding="async" alt="Follow the proof path"></a><figcaption><strong>Follow the proof path</strong><p>The proof keeps a sibling hash and its direction for each level on the path to the root.</p></figcaption></figure>
+<figure class="card" data-category="merkle"><a href="assets/screenshots/20-merkle-tamper-check.png" data-title="Detect an edited review"><img src="assets/screenshots/20-merkle-tamper-check.png" width="1440" height="900" loading="lazy" decoding="async" alt="Detect an edited review"></a><figcaption><strong>Detect an edited review</strong><p>The interactive demo saves a changed copy, reloads it, and compares its root with the saved digest.</p></figcaption></figure>
+<figure class="card" data-category="merkle"><a href="assets/screenshots/21-merkle-scaling-report.png" data-title="Merkle scaling results"><img src="assets/screenshots/21-merkle-scaling-report.png" width="1440" height="900" loading="lazy" decoding="async" alt="Merkle scaling results"></a><figcaption><strong>Merkle scaling results</strong><p>The original report records build time and memory at several dataset sizes. These are historical measurements.</p></figcaption></figure>
+<figure class="card" data-category="coursework"><a href="assets/screenshots/22-heap-design-report.png" data-title="Heap implementation report"><img src="assets/screenshots/22-heap-design-report.png" width="1440" height="900" loading="lazy" decoding="async" alt="Heap implementation report"></a><figcaption><strong>Heap implementation report</strong><p>The original heap report explains how the three queue implementations were built.</p></figcaption></figure>
+<figure class="card" data-category="coursework"><a href="assets/screenshots/23-treap-study-report.png" data-title="Treap experiment setup"><img src="assets/screenshots/23-treap-study-report.png" width="1440" height="900" loading="lazy" decoding="async" alt="Treap experiment setup"></a><figcaption><strong>Treap experiment setup</strong><p>The original report describes the feed structures, dataset setup, and measurement method.</p></figcaption></figure>
+<figure class="card" data-category="coursework"><a href="assets/screenshots/24-assignment-03.png" data-title="Assignment 03 statement"><img src="assets/screenshots/24-assignment-03.png" width="1440" height="900" loading="lazy" decoding="async" alt="Assignment 03 statement"></a><figcaption><strong>Assignment 03 statement</strong><p>The original assignment brief accompanies four independent C++ solutions.</p></figcaption></figure>
+</div>
+  </div></section>
+  <section id="folder-structure"><div class="container">
+    <h2>Folder Structure</h2>
+    <div class="code-wrap"><div class="code-bar"><span class="code-label">Repository layout</span><button type="button" class="copy" hidden>Copy</button></div><pre class="code-sample" tabindex="0"><code>Heap_Treap_Merkle/
+├── heap/
+│   ├── include/          Priority queues, graph loader, Dijkstra
+│   ├── experiments/      Standalone coursework experiments
+│   └── bonus/            Parallel and tracked experiments
+├── treap/                Feed trees, benchmark, notebook
+├── merkle/               Review loader, Merkle tree, proofs, CLI
+├── data/                 Sample graph and reviews
+├── docs/                 Reports, briefs, rubrics, Assignment 03
+├── assets/               Website styles, scripts, screenshots
+├── CMakeLists.txt        C++ build
+├── index.html            Project website
+└── README.md</code></pre></div>
+  </div></section>
+  <section id="how-to-use"><div class="container">
+<h2>How to Use This Repository</h2>
+<ol><li>Run all three demos on the bundled samples.</li><li>Use the file guides to find the benchmark entry points and original coursework drivers.</li><li>Compare the current demo output with the original reports and figures.</li><li>Use the data guide when switching to the full road graphs or a Reddit dump.</li></ol>
+</div></section>
+<section id="how-to-compile-and-run"><div class="container">
+    <h2>How to Compile and Run</h2>
+    <h3>Quick Start</h3><p>Run from the repository root. The Python sample demos use the standard library. For C++, use CMake and a C++17 compiler.</p><div class="code-wrap"><div class="code-bar"><span class="code-label">Quick Start</span><button type="button" class="copy" hidden>Copy</button></div><pre class="code-sample" tabindex="0"><code>cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+./build/heap_benchmark data/sample.road-d
+python -m treap
+python -m merkle data/sample-reviews.jsonl</code></pre></div><h3>More Ways to Run</h3><p>The first command starts Dijkstra at vertex 2. The second opens the interactive Merkle menu. The last two prepare the optional Reddit workload.</p><div class="code-wrap"><div class="code-bar"><span class="code-label">More Ways to Run</span><button type="button" class="copy" hidden>Copy</button></div><pre class="code-sample" tabindex="0"><code>./build/heap_benchmark data/sample.road-d 2
+python -m merkle
+python -m pip install -r treap/requirements.txt
+python -m treap --dataset data/RC_2019-04.zst --posts 10000</code></pre></div><p>With Visual Studio, run ./build/Release/heap_benchmark.exe. With MinGW, use -G &quot;MinGW Makefiles&quot; at configure time if needed. Set -DBUILD_COURSEWORK_EXPERIMENTS=ON to build the standalone heap experiments.</p>
+  </div></section>
+  <section id="credits"><div class="container">
+    <h2>Credits</h2>
+    <p>Algorithms coursework by Mohammad Rohaan, Ali Bin Salman, and Muhammad Danish. The individual reports identify the contributors for each study. <a href="https://github.com/rohaan2802">GitHub profile</a></p>
+  </div></section>
+
+</main>
+<footer class="site-footer"><div class="container"><a href="https://github.com/rohaan2802/Heap_Treap_Merkle">Project source</a></div></footer>
+<a class="btn btn-primary back-top" href="#top" hidden aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-7 7 7-7 7 7"/></svg></a>
+<dialog class="lightbox-native" aria-labelledby="image-title">
+  <div class="lightbox-bar">
+    <strong id="image-title">Screenshot</strong>
+    <form method="dialog"><button type="submit" class="icon-btn" aria-label="Close screenshot">×</button></form>
+  </div>
+  <img alt="" width="1440" height="900">
+  <div class="lightbox-controls">
+    <button type="button" class="chip" id="previous-image">← Previous</button>
+    <span id="image-position" aria-live="polite"></span>
+    <button type="button" class="chip" id="next-image">Next →</button>
+    <a id="image-original" target="_blank" rel="noopener">Full image</a>
+  </div>
+</dialog>
+</body>
+</html>
